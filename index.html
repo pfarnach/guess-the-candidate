@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Guess that Candidate</title>
+	
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="politicianApp">
+
+	<div class="container" ng-controller="mainController">
+		<p-header></p-header>
+		<p-questions></p-questions>
+		<p-score></p-score>
+	</div>
+	
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="app.js"></script>
+	<script src="components/questionsFactory.js"></script>
+	<script src="components/header/header.directive.js"></script>
+	<script src="components/questions/questions.directive.js"></script>
+	<script src="components/score/score.directive.js"></script>
+</body>
+</html>
