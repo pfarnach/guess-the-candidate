@@ -15,13 +15,14 @@
 
 	<div class="container" ng-controller="mainController">
 		<p-header></p-header>
-		<p-questions></p-questions>
-		<p-score></p-score>
+		<p-questions questions="questions"></p-questions>
+		<p-score questions="questions"></p-score>
 	</div>
 	
 
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="bower_components/lodash/lodash.min.js"></script>
 	<script src="app.js"></script>
 	<script src="components/questionsFactory.js"></script>
 	<script src="components/header/header.directive.js"></script>

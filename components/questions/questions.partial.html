@@ -1,1 +1,20 @@
-<h1>questions</h1>
+<div class="question-container">
+	<div>{{ selectedQ.name }}</div>
+	<div>{{ selectedQ.content }}</div>
+	<div ng-if="!selectedQ.answered" ng-repeat="choice in selectedQ.choices">
+		<label>
+			<input type="radio"
+			       name="{{selectedQ.name}}"
+			       value="{{ choice.name }}"
+			       ng-model="option.selectedChoice">
+		{{ choice.name }}</label>
+	</div>
+	<div ng-if="selectedQ.answered && selectedQ.correct">
+		Nice job!
+	</div>
+	<div ng-if="selectedQ.answered && !selectedQ.correct">
+		Wrong answer!
+	</div>
+
+	<button type="submit" ng-click="checkAnswer()">Check Answer</button>
+</div>

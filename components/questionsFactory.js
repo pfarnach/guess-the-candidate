@@ -1,18 +1,36 @@
 angular
 	.module('politicianApp')
-		.factory('questionsFactory', function pHeader() {
+		.factory('questionsFactory', function questionsFactory() {
 
 			function getQuestions() {
 				return [
 					{
 						name: 'Question 1',
 						content: 'What is the squareroot of 4?',
-						answer: '2'
+						choices: [
+							{ name: '1', correct: false },
+							{ name: 'dog', correct: false },
+							{ name: '2', correct: true },
+							{ name: '5', correct: false }
+						],
+						selected: true,
+						answered: false,
+						correct: false,
+						source: ''
 					},
 					{
 						name: 'Question 2',
-						content: 'What smells like a dog and walks like a dog?',
-						answer: 'A dog'
+						content: 'What is the squareroot of 9?',
+						choices: [
+							{ name: 'perro', correct: false },
+							{ name: 'dog', correct: false },
+							{ name: 'chien', correct: false },
+							{ name: '3', correct: true }
+						],
+						selected: false,
+						answered: false,
+						correct: false,
+						source: ''
 					}
 				];
 			}
