@@ -1,6 +1,10 @@
 <div class="question-container">
 	<div>{{ selectedQ.name }}</div>
-	<div>{{ selectedQ.content }}</div>
+	<div>{{ selectedQ.contentHeader }}</div>
+	<div ng-if="selectedQ.type !== 'table'">{{ selectedQ.content }}</div>
+	<div ng-if="selectedQ.type === 'table'">
+		<span ng-repeat="contentLine in selectedQ.content">{{ $index+1 }}.) {{ contentLine }}<br></span>
+	</div>
 	<div ng-if="!selectedQ.answered" ng-repeat="choice in selectedQ.choices">
 		<label>
 			<input type="radio"
@@ -15,6 +19,8 @@
 	<div ng-if="selectedQ.answered && !selectedQ.correct">
 		Wrong answer!
 	</div>
+
+	<a ng-show="selectedQ.answered" ng-href="{{ selectedQ.source }}" target="_blank">(Source)</a>
 
 	<button type="submit" ng-click="checkAnswer()">Check Answer</button>
 </div>

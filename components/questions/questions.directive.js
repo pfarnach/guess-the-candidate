@@ -35,10 +35,7 @@ angular
 						scope.selectedQ.answered = true;
 					}
 
-					// check against selectedAnswer
-					// display answer along with source
-					// timeout to next question
-					// if all questions done, show score
+					scope.option.selectedChoice = false;
 				};
 			}
 
