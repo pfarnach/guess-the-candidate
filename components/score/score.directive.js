@@ -1,3 +1,5 @@
+'use strict';
+
 angular
 	.module('politicianApp')
 		.directive('pScore', function pScore() {
@@ -19,6 +21,16 @@ angular
 					});
 					question.selected = true;
 				};
+
+				scope.scoreBoxClass = function(question) {
+					if (!question.answered) {
+						return 'unanswered score-box';
+					} else if (question.answered && question.correct) {
+						return 'correct score-box';
+					} else {
+					return 'incorrect score-box';						
+					}
+				}
 
 			}
 

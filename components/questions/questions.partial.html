@@ -20,7 +20,8 @@
 		Wrong answer!
 	</div>
 
-	<a ng-show="selectedQ.answered" ng-href="{{ selectedQ.source }}" target="_blank">(Source)</a>
+	<a ng-show="selectedQ.answered" ng-href="{{ selectedQ.source1 }}" target="_blank">(Source)</a>
+	<a ng-show="selectedQ.answered && selectedQ.source2" ng-href="{{ selectedQ.source2 }}" target="_blank">& (Source)</a>
 
-	<button type="submit" ng-click="checkAnswer()">Check Answer</button>
+	<button type="submit" ng-if="!selectedQ.answered" ng-click="checkAnswer()">Check Answer</button>
 </div>

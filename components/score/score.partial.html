@@ -1,8 +1,7 @@
-<h1>score!</h1>
-<div ng-repeat="question in questions"
-     ng-click="setSelectedQ(question)"
-     class="score-container">
-	<span class="score-unanswered" ng-show="!question.answered">_</span>
-	<span class="score-correct" ng-show="question.answered && question.correct">√</span>
-	<span class="score-incorrect" ng-show="question.answered && !question.correct">X</span>
+<div class="score-container">
+	<div ng-repeat="question in questions"
+	     ng-click="setSelectedQ(question)"
+	     class="{{ scoreBoxClass(question) }}"
+	     ng-class="{ 'selected' : question.selected }">
+	</div>
 </div>

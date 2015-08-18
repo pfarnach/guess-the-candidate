@@ -1,0 +1,30 @@
+
+
+/* ---- Score partial ----- */
+.score-container {
+	margin-top: 20px;
+}
+
+.score-container .score-box {
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+}
+
+.score-container .unanswered {
+	background-color: black;
+}
+
+.score-container .correct {
+	background-color: lightblue;
+}
+
+.score-container .incorrect {
+	background-color: red;
+}
+
+.score-container .selected {
+	-webkit-box-shadow:inset 0px 0px 0px 3px grey;
+    -moz-box-shadow:inset 0px 0px 0px 3px grey;
+    box-shadow:inset 0px 0px 0px 3px grey;
+}

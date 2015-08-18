@@ -1,3 +1,5 @@
+'use strict';
+
 angular
 	.module('politicianApp')
 		.directive('pQuestions', function pQuestions() {
