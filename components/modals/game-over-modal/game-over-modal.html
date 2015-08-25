@@ -1,0 +1,10 @@
+<div>
+	<div>Congratulations! You got <strong>{{ finalScore }} out of 10</strong> questions right!</div>
+	<div ng-show="!finalScore">Not even one?!</div>
+	<div ng-show="finalScore > 0 && finalScore <= 5">You can do better than that!</div>
+	<div ng-show="finalScore > 5 && finalScore < 10">That's a respectable score!</div>
+	<div ng-show="finalScore === 10">You really know your stuff!</div>
+
+	<div class="btn btn-primary" ng-click="reload()">Play again?</div>
+	<div class="btn btn-info">Share</div>
+</div>

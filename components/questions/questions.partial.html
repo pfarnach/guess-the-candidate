@@ -1,4 +1,6 @@
 <div class="question-container">
+
+	<!-- Question -->
 	<div>{{ selectedQ.name }}</div>
 	<div>{{ selectedQ.contentHeader }}</div>
 	<div ng-if="selectedQ.type !== 'table'">{{ selectedQ.content }}</div>
@@ -12,6 +14,8 @@
 			       value="{{ choice.name }}"
 			       ng-model="option.selectedChoice">
 		{{ choice.name }}</label>
+
+	<!-- show if answer is right or wrong -->
 	</div>
 	<div ng-if="selectedQ.answered && selectedQ.correct">
 		Nice job!
@@ -20,8 +24,10 @@
 		Wrong answer!
 	</div>
 
+  <!-- Source(s) after question has been answered -->
 	<a ng-show="selectedQ.answered" ng-href="{{ selectedQ.source1 }}" target="_blank">(Source)</a>
-	<a ng-show="selectedQ.answered && selectedQ.source2" ng-href="{{ selectedQ.source2 }}" target="_blank">& (Source)</a>
+	<span ng-show="selectedQ.answered && selectedQ.source2">&nbsp&&nbsp</span>
+	<a ng-show="selectedQ.answered && selectedQ.source2" ng-href="{{ selectedQ.source2 }}" target="_blank">(Source)</a>
 
-	<button type="submit" ng-if="!selectedQ.answered" ng-click="checkAnswer()">Check Answer</button>
+	<button type="submit" ng-disabled="!option.selectedChoice" ng-if="!selectedQ.answered" ng-click="checkAnswer()">Check Answer</button>
 </div>
